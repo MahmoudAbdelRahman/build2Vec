@@ -54,6 +54,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+)
+
 ROOT_URLCONF = 'build2vec.urls'
 
 TEMPLATES = [
@@ -84,11 +92,12 @@ WSGI_APPLICATION = 'build2vec.wsgi.application'
 # for more information
 import pymysql  # noqa: 402
 pymysql.install_as_MySQLdb()
-django.db.connections.close_all()
+# django.db.connections.close_all()
 
 
 # [START db_setup]
 if os.getenv('GAE_APPLICATION', None):
+    print("Hello world")
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
     DATABASES = {
