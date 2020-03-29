@@ -1,4 +1,5 @@
-Django
+Django==2.1.14 #This requirement must remain pinned at 2.1.14 until https://github.com/PyMySQL/PyMySQL/issues/790 is resolved
+PyMySQL==0.9.3
 google-cloud-datastore==1.10.0
 google-auth==1.11.2
 requests==2.22.0
@@ -6,3 +7,4 @@ networkx
 google-cloud-storage==1.24.1
 googleapis_common_protos
 dj_database_url
+gunicorn

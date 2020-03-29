@@ -55,14 +55,11 @@ MIDDLEWARE = [
 ]
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'build2vec.urls'
@@ -100,6 +97,7 @@ pymysql.install_as_MySQLdb()
 
 # [START db_setup]
 if os.getenv('GAE_APPLICATION', None):
+    print("Hello world")
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
     DATABASES = {
@@ -167,9 +165,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = 'static'
+# STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 # PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
