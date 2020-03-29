@@ -3,10 +3,12 @@ body {
 }
 
 div#headercontainer {
-    text-align: center;
+    text-align: left;
     padding: 29px;
-    color: white;
-    background-color: #1565C0;
+    /* color: white; */
+    /* background-color: #1565C0; */
     font-family: monospace;
     font-size: xx-large;
+    border-bottom: 1px dashed black;
+    font-weight: bold;
 }
