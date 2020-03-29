@@ -54,6 +54,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
 ROOT_URLCONF = 'build2vec.urls'
 
 TEMPLATES = [
@@ -84,7 +95,7 @@ WSGI_APPLICATION = 'build2vec.wsgi.application'
 # for more information
 import pymysql  # noqa: 402
 pymysql.install_as_MySQLdb()
-django.db.connections.close_all()
+# django.db.connections.close_all()
 
 
 # [START db_setup]
