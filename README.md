@@ -2,19 +2,22 @@
 
 Graph Neural Networks based building representation in the vector space
 
-## Installation:
+## Installation
 
-`pip install build2vec`
+```
+$ pip install build2vec
+```
 
-## Licence
+## Examples
 
-MIT
+```Python
+import networkx as nx
+from build2vec import Build2Vec
+emb_dimensions = 10
+# Create a graph using networkx -- you can generate the graph from dataframe of edges
+graph = nx.from_pandas_edgelist(df_links_graph)
 
-## Author
+build2vec = Build2Vec(graph, dimensions=emb_dimensions, walk_length=50, num_walks=50, workers=1)
 
-Mahmoud Abdelrahman
-
-## Published contents
-
-1. pub1
-2. pub2
+model = build2vec.fit(window=50, min_count=1, batch_words=10)
+```
