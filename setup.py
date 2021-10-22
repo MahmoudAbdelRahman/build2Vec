@@ -1,28 +1,39 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
+import codecs
+import os
+
+here = os.path.abspath(os.path.dirname(__file__))
+
+with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
+    long_description = "\n" + fh.read()
+
+VERSION = '0.0.1'
+DESCRIPTION = 'Python package for building data embeddings'
+LONG_DESCRIPTION = 'A package that allows to build simple streams of video, audio and camera data.'
+
+# Setting up
 setup(
-  name = 'build2vec',         # How you named your package folder (MyLib)
-  packages = ['build2vec'],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
-  license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'Python package for building data embeddings',   # Give a short description about your library
-  author = 'Mahmoud Abdelrahman',                   # Type in your name
-  author_email = 'arch.mahmoud.ouf111@gmail.com',      # Type in your E-Mail
-  url = 'https://github.com/MahmoudAbdelRahman/build2Vec',   # Provide either the link to your github or to your website
-  keywords = ['graph', 'embeddings', 'building', 'bim', 'gis', 'gnn'],   # Keywords that define your package best
-  install_requires=[            # I get to this in a second
+    name = 'build2vec',         # How you named your package folder (MyLib)
+    version=VERSION,
+    author="Mahmoud Abdelrahman",
+    author_email="<arch.mahmoud.ouf111@gmail.com>",
+    description=DESCRIPTION,
+    long_description_content_type="text/markdown",
+    long_description=long_description,
+    packages=find_packages(),
+    install_requires=[            # I get to this in a second
           'gensim',
           'networkx',
-          'geopandas'
+          'geopandas',
+          'tqdm',
       ],
-  classifiers=[
-    'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
-    'Intended Audience :: Building developers',      # Define that your audience are developers
-    'Topic :: Software Development :: Build Tools',
-    'License :: OSI Approved :: MIT License',   # Again, pick a license
-    'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
-    'Programming Language :: Python :: 3.4',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
-    'Programming Language :: Python :: 3.8',
-  ],
+    keywords=['python', 'video', 'stream', 'video stream', 'camera stream', 'sockets'],
+    classifiers=[
+        "Development Status :: 1 - Planning",
+        "Intended Audience :: Developers",
+        "Programming Language :: Python :: 3",
+        "Operating System :: Unix",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: Microsoft :: Windows",
+    ]
 )

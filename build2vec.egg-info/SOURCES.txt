@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+build2vec/__init__.py
+build2vec/build2vec.py
+build2vec/dynabuild2vec.py
+build2vec/ifc2graph.py
+build2vec/parallel.py
+build2vec.egg-info/PKG-INFO
+build2vec.egg-info/SOURCES.txt
+build2vec.egg-info/dependency_links.txt
+build2vec.egg-info/requires.txt
+build2vec.egg-info/top_level.txt
