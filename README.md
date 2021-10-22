@@ -1,2 +1,3 @@
-# build2Vec
-vectorizing building syntax 
+BUILD2VEC Python package
+
+
