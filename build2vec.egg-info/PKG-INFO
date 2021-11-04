@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: build2vec
-Version: 0.0.5
+Version: 0.0.6
 Summary: Python package for building data embeddings
 Home-page: UNKNOWN
 Author: Mahmoud Abdelrahman
@@ -43,18 +43,26 @@ Description:
         ## Citation:
         
         ```bib
-        @inproceedings{abdelrahmanbuild2vec,
-            title = {{Build2Vec: Building Representation in Vector Space}},
-            year = {2020},
-            booktitle = {SimAUD 2020},
-            author = {Abdelrahman, Mahmoud M and Chong, Adrian and Miller, Clayton},
-            number = {May},
-            pages = {101--104},
-            publisher = {Society for Modeling {\&} Simulation International (SCS)},
-            url = {http://simaud.org/2020/proceedings/102.pdf},
-            address = {Online},
-            arxivId = {2007.00740},
-            keywords = {Feature learning, Graph embeddings, Representation learning, STAR, node2vec}
+        @inproceedings{10.5555/3465085.3465155,
+        author = {Abdelrahman, Mahmoud M. and Chong, Adrian and Miller, Clayton},
+        title = {Build2Vec: Building Representation in Vector Space},
+        year = {2020},
+        abstract = {In this paper, we represent a methodology of a graph embeddings algorithm that is
+        used to transform labeled property graphs obtained from a Building Information Model
+        (BIM). Industrial Foundation Classes (IFC) is a standard schema for BIM, which is
+        utilized to convert the building data into a graph representation. We used node2Vec
+        with biased random walks to extract semantic similarities between different building
+        components and represent them in a multi-dimensional vector space. A case study implementation
+        is conducted on a net-zero-energy building located at the National University of Singapore
+        (SDE4). This approach shows promising machine learning applications in capturing the
+        semantic relations and similarities of different building objects, more specifically,
+        spatial and spatio-temporal data.},
+        booktitle = {Proceedings of the 11th Annual Symposium on Simulation for Architecture and Urban Design},
+        articleno = {70},
+        numpages = {4},
+        keywords = {graph embeddings, STAR, node2vec, feature learning, representation learning},
+        location = {Virtual Event, Austria},
+        series = {SimAUD '20},
         }
         ```
         
